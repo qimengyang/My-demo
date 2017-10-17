@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>公司介绍</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<script src="jquery-1.8.3.min.js"></script>
 	<style>
 		*{
 			margin: 0;
@@ -11,7 +12,7 @@
 			list-style: none;
 			font-family: "微软雅黑";
 			text-decoration: none;
-			-webkit-font-smoothing: antialiased;
+			-webkit-text-size-adjust: none;
 		}
 		.gsjs{
 			text-align: center;
@@ -29,6 +30,7 @@
 			text-align: left;
 			text-indent: 2em;
 			font-size: 24px;
+			line-height: 37px;
 		}
 		.gs4{
 			text-align: center;
@@ -46,6 +48,13 @@
 			height: 260px;
 			margin-left: 10px;
 			margin-top: 10px;
+		}
+		.names{
+			width:350px;
+			margin-left:318px;
+			text-align:right;
+			padding-right:50px;
+			overflow:hidden;
 		}
 	</style>
 </head>
@@ -72,7 +81,7 @@
 			<div class="gs3">
 				各位员工:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;欢迎您加入顺禄建司这个大家庭。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作为顺禄建司的一员，我们共同肩负着促进公司发展和树立公司形象的责任，相信每一位员工都在各自的岗位上充分担当着重要的角色，并渴望从工作中获得成功与收获。我们也在努力地为每位员工的发展创造着更加广阔的空间，提供更加公开、公平、公正的工作平台，以期每位员工都能够在我们公司发挥最大的潜能。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;同时也要求每位员工能以公司的各种规章制度规范自己的日常行为，以保证公司各项政策、制度得以有效运行，让我们的每一步都走在健康发展的道路上。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;员工的发展将是我们最为关注的，我们期望顺禄建司的每位员工能够同公司一起发展，一起进步。让我们携手合作，为顺禄建司的兴旺发展而不懈努力！
 			</div>
-			<div style="width:350px;margin-left:318px;text-align:right;padding-right:50px;overflow:hidden;">
+			<div class="names">
 				<div style="float:left;margin-top:30px;">董事长签名：</div>
 				<img src="btn/names.png" alt="" style="float:right;">
 			</div>
@@ -121,6 +130,27 @@
 			scale();
 		}
 
+	</script>
+	<script>
+		$(function(){
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isiOS==true){
+            $(".gs1").css({
+                "font-size":"17px"
+                });
+            $(".gs4").css({
+                "font-size":"17px"
+                });
+            $(".gs2").css({
+                "font-size":"16px"
+                });
+            $(".gs3").css({
+                "font-size":"12px"
+                });
+        }
+    })    
 	</script>
 </body>
 </html>
